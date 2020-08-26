@@ -1,3 +1,3 @@
 # ku-polls
 
-[[Wiki]]
+[Vision Statement](../../wiki/vision%20statement)
