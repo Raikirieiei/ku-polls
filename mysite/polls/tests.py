@@ -101,3 +101,11 @@ class QuestionIndexViewTests(TestCase):
             response.context['latest_question_list'],
             ['<Question: Past question 2.>', '<Question: Past question 1.>']
         )
+
+class PublishedTimeTests(TestCase):
+    #to be added
+    def test_is_published(self):
+        return 0
+    #to be added
+    def test_can_vote(self):
+        return 0
