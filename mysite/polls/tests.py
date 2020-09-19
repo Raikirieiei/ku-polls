@@ -65,7 +65,7 @@ class QuestionIndexViewTests(TestCase):
         future_question = create_question(question_text='Future question.', days=5)
         url = reverse('polls:detail', args=(future_question.id,))
         response = self.client.get(url)
-        self.assertEqual(response.status_code, 404)
+        self.assertEqual(response.status_code, 302)
 
     def test_past_question(self):
         """
@@ -103,9 +103,13 @@ class QuestionIndexViewTests(TestCase):
         )
 
 class PublishedTimeTests(TestCase):
-    #to be added
+    
     def test_is_published(self):
-        return 0
-    #to be added
+        time = timezone.now() - datetime.timedelta(days=1)
+        question = Question(pub_date=time)
+        self.assertTrue(question.is_published())
+    
     def test_can_vote(self):
-        return 0
+        time = timezone.now() - datetime.timedelta(days=1)
+        question = Question(pub_date=time)
+        self.assertTrue(question.can_vote())
