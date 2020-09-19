@@ -4,6 +4,6 @@
 
 ## >>>[Wiki Home](../../wiki/home)<<<
 
-## >>>[Iteration 1](../../wiki/home)<<<
+## >>>[Iteration 1](/wiki/Iteration-1-Plan)<<<
 
-## >>>[Iteration 2](../../wiki/home)<<<
+## >>>[Iteration 2](/wiki/Iteration-2-Plan)<<<
