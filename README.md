@@ -1,5 +1,7 @@
 # KU-Polls
 
+[![Build Status](https://travis-ci.com/Raikirieiei/ku-polls.svg?branch=master)](https://travis-ci.com/Raikirieiei/ku-polls)
+
 - The description of this application is in the wiki below.
 
 ## >>>[Wiki Home](../../wiki/home)<<<
