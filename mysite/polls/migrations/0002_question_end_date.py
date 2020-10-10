@@ -14,7 +14,8 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='question',
             name='end_date',
-            field=models.DateTimeField(default=django.utils.timezone.now, verbose_name='date ended'),
+            field=models.DateTimeField(
+                default=django.utils.timezone.now, verbose_name='date ended'),
             preserve_default=False,
         ),
     ]
