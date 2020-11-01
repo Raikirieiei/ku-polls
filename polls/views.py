@@ -7,7 +7,6 @@ from django.utils import timezone
 from django.contrib import messages
 from django.db.models import ObjectDoesNotExist
 
-
 class IndexView(generic.ListView):
     """Class about index page."""
 

@@ -1,6 +1,7 @@
 import datetime
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 
 class Question(models.Model):
@@ -45,3 +46,4 @@ class Choice(models.Model):
     def __str__(self):
         """Show the choice text."""
         return self.choice_text
+

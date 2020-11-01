@@ -5,6 +5,7 @@ from django.utils import timezone
 
 from .models import Question
 from django.urls import reverse
+from django.contrib.auth import get_user_model
 
 
 class QuestionModelTests(TestCase):
@@ -109,3 +110,31 @@ class PublishedTimeTests(TestCase):
         time = timezone.now() - datetime.timedelta(days=1)
         question = Question(pub_date=time)
         self.assertTrue(question.can_vote())
+
+class AuthenticationTest(TestCase):
+    """Test Authenticaton"""
+
+    def setUp(self):
+        """setup method for testing"""
+        User = get_user_model()
+        user = User.objects.create_user("Raikirieiei", email="thornthep.c@ku.th", password="Bloodedge")
+        user.first_name = "Thornthep"
+        user.last_name = "Chomchuen"
+        user.save()
+
+    def test_logged_in(self):
+        """Test the user login."""
+        self.client.login(username="Raikirieiei", password="Bloodedge")
+        url = reverse("polls:index")
+        response = self.client.get(url)
+        self.assertContains(response, "Thornthep")
+
+    def test_logged_out(self):
+        """Test the user logout."""
+        self.client.login(username="Raikirieiei", password="Bloodedge")
+        self.client.logout()
+        url = reverse("polls:index")
+        response = self.client.get(url)
+        self.assertNotContains(response, "Thornthep")
+
+    
