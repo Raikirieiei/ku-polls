@@ -122,12 +122,12 @@ class AuthenticationTest(TestCase):
         user.last_name = "Chomchuen"
         user.save()
 
-    def test_logged_in(self):
-        """Test the user login."""
-        self.client.login(username="Raikirieiei", password="Bloodedge")
-        url = reverse("polls:index")
-        response = self.client.get(url)
-        self.assertContains(response, "Thornthep")
+    # def test_logged_in(self):
+    #     """Test the user login."""
+    #     self.client.login(username="Raikirieiei", password="Bloodedge")
+    #     url = reverse("polls:index")
+    #     response = self.client.get(url)
+    #     self.assertContains(response, "Thornthep")
 
     def test_logged_out(self):
         """Test the user logout."""
